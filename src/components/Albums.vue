@@ -6,6 +6,18 @@
 import axios from "axios";
 export default {
   name: "Albums",
+  data() {
+    return {
+      listOfAlbums: [],
+    };
+  },
+  methods: {
+    getAlbums() {
+      axios.get("qualcosa").then((res) => {
+        this.listOfAlbums = res;
+      });
+    },
+  },
 };
 </script>
 
