@@ -1,4 +1,9 @@
-<template></template>
+<template>
+  <div id="generics">
+    <header></header>
+    <main></main>
+  </div>
+</template>
 
 <script>
 export default {
