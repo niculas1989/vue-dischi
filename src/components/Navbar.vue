@@ -1,5 +1,5 @@
 <template>
-  <div id="nav" class="">
+  <div id="nav" class="mt-2">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 167.5 167.5"

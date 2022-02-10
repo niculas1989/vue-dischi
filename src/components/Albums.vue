@@ -1,15 +1,8 @@
 <template>
   <div id="albums" class="d-flex justify-content-center align-items-center">
     <ul class="d-flex flex-wrap container">
-      <li
-        class="single-album pb-3 d-flex flex-column"
-        v-for="album in listOfAlbums"
-        :key="album.title"
-      >
-        <img :src="album.poster" :alt="album.poster" />
-        <span class="title">{{ album.title }}</span>
-        <span class="text-muted">{{ album.author }}</span>
-        <span class="text-muted">{{ album.year }}</span>
+      <li class="album pb-3" v-for="album in listOfAlbums" :key="album.title">
+        <SingleAlbum :album="album" />
       </li>
     </ul>
   </div>
@@ -17,8 +10,12 @@
 
 <script>
 import axios from "axios";
+import SingleAlbum from "./SingleAlbum.vue";
 export default {
   name: "Albums",
+  components: {
+    SingleAlbum,
+  },
   data() {
     return {
       listOfAlbums: [],
@@ -123,16 +120,7 @@ export default {
   height: 650px;
 }
 
-.single-album {
+.album {
   width: calc(100% / 5);
-  img {
-    height: 150px;
-    width: 150px;
-  }
-}
-
-.title {
-  font-size: 1.4rem;
-  color: white;
 }
 </style>
