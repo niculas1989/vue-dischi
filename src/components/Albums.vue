@@ -1,7 +1,11 @@
 <template>
   <div id="albums" class="d-flex justify-content-center align-items-center">
     <ul class="d-flex flex-wrap container">
-      <li class="album pb-3" v-for="album in listOfAlbums" :key="album.title">
+      <li
+        class="row pb-3 album text-center"
+        v-for="album in listOfAlbums"
+        :key="album.title"
+      >
         <SingleAlbum :album="album" />
       </li>
     </ul>
