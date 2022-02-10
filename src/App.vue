@@ -1,14 +1,24 @@
 <template>
   <div id="generics">
-    <header></header>
-    <main></main>
+    <header>
+      <Navbar />
+    </header>
+    <main>
+      <Albums />
+    </main>
   </div>
 </template>
 
 <script>
+import Navbar from "./components/Navbar.vue";
+import Albums from "./components/Albums.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    Navbar,
+    Albums,
+  },
 };
 </script>
 
