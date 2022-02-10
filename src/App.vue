@@ -4,7 +4,7 @@
       <Navbar />
     </header>
     <main>
-      <Albums />
+      <Albums class="h-100" />
     </main>
   </div>
 </template>
