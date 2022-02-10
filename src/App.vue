@@ -24,7 +24,10 @@ export default {
 
 <style lang="scss">
 @import "./assets/scss/style.scss";
-#generics {
-  height: 100vh;
+body {
+  background-color: #1e2d3b;
+}
+img {
+  max-width: 100%;
 }
 </style>

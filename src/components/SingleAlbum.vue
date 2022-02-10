@@ -1,17 +1,9 @@
 <template>
-  <div
-    class="
-      single-album
-      d-flex
-      flex-column
-      justify-content-center
-      align-items-center
-    "
-  >
-    <img :src="album.poster" :alt="album.poster" />
-    <span class="title">{{ album.title }}</span>
-    <span class="text-muted">{{ album.author }}</span>
-    <span class="text-muted">{{ album.year }}</span>
+  <div class="card-disc text-center" role="button">
+    <img :src="album.poster" :alt="album.author" />
+    <h4 class="text-white mt-3">{{ album.title.toUpperCase() }}</h4>
+    <p class="text-secondary m-0 pt-2">{{ album.author }}</p>
+    <p class="text-secondary">{{ album.year }}</p>
   </div>
 </template>
 
@@ -23,18 +15,10 @@ export default {
 </script>
 
 <style scoped>
-.single-album {
-  width: 80%;
-  background-color: rgba(#0000, 0.5);
-}
-
-img {
-  height: 150px;
-  width: 150px;
-}
-
-.title {
-  font-size: 1.4rem;
-  color: white;
+.card-disc {
+  background-color: #2e3a46;
+  font-weight: bold;
+  height: 400px;
+  padding: 1.2rem;
 }
 </style>
