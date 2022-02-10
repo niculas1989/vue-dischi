@@ -3,7 +3,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Albums",
+};
 </script>
 
 <style scoped lang="scss">
