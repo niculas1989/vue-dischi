@@ -1,8 +1,15 @@
 <template>
-  <div id="albums">
-    <ul>
-      <li v-for="album in listOfAlbums" :key="album.title">
-        {{ album.genre }}
+  <div id="albums" class="d-flex justify-content-center align-items-center">
+    <ul class="d-flex flex-wrap container">
+      <li
+        class="single-album pb-3 d-flex flex-column"
+        v-for="album in listOfAlbums"
+        :key="album.title"
+      >
+        <img :src="album.poster" :alt="album.poster" />
+        <span class="title">{{ album.title }}</span>
+        <span class="text-muted">{{ album.author }}</span>
+        <span class="text-muted">{{ album.year }}</span>
       </li>
     </ul>
   </div>
@@ -113,6 +120,19 @@ export default {
 <style scoped lang="scss">
 #albums {
   background-color: #1e2d3b;
-  height: 100%;
+  height: 650px;
+}
+
+.single-album {
+  width: calc(100% / 5);
+  img {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.title {
+  font-size: 1.4rem;
+  color: white;
 }
 </style>

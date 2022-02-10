@@ -4,7 +4,7 @@
       <Navbar />
     </header>
     <main>
-      <Albums class="h-100" />
+      <Albums />
     </main>
   </div>
 </template>
@@ -24,8 +24,4 @@ export default {
 
 <style lang="scss">
 @import "./assets/scss/style.scss";
-
-#generics {
-  height: 90vh;
-}
 </style>
