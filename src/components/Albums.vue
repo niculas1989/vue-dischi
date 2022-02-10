@@ -121,7 +121,7 @@ export default {
 <style scoped lang="scss">
 #albums {
   background-color: #1e2d3b;
-  height: 650px;
+  height: calc(100vh - 60px);
 }
 
 .album {

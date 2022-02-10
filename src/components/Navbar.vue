@@ -1,5 +1,5 @@
 <template>
-  <div id="nav" class="mt-2">
+  <div id="nav">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 167.5 167.5"
@@ -23,6 +23,8 @@ export default {
 <style scoped lang="scss">
 #nav {
   background-color: #2d3a46;
+  height: 50px;
+  margin-top: 10px;
 }
 
 svg {
