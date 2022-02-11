@@ -16,18 +16,40 @@
       </a>
       <select name="genre" id="genre" form="genreform">
         <option value="default">---</option>
-        <option value="rock">Rock</option>
-        <option value="pop">Pop</option>
-        <option value="jazz">Jazz</option>
-        <option value="metal">Metal</option>
+        <option
+          v-for="album in listOfAlbums"
+          :key="album.title"
+          :value="album.genre"
+        >
+          {{ album.genre }}
+        </option>
       </select>
     </div>
   </nav>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Navbar",
+  data() {
+    return {
+      search: "",
+      listOfAlbums: [],
+      url: "https://flynn.boolean.careers/exercises/api/array/music",
+    };
+  },
+  computed: {},
+  methods: {
+    getAlbums() {
+      axios.get(this.url).then((res) => {
+        this.listOfAlbums = res.data.response;
+      });
+    },
+  },
+  mounted() {
+    this.getAlbums();
+  },
 };
 </script>
 
