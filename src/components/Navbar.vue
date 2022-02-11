@@ -16,8 +16,8 @@
       </a>
       <select name="genre" id="genre" form="genreform">
         <option value="default">---</option>
-        <option v-for="album in albums" :key="album.genre">
-          {{ album.genre }}
+        <option v-for="(album, index) in filteredGenre" :key="index">
+          {{ album }}
         </option>
       </select>
     </div>
@@ -35,7 +35,15 @@ export default {
       url: "https://flynn.boolean.careers/exercises/api/array/music",
     };
   },
-  computed: {},
+  computed: {
+    filteredGenre() {
+      const genres = [];
+      this.albums.forEach((d) => {
+        if (!genres.includes(d.genre)) genres.push(d.genre);
+      });
+      return genres;
+    },
+  },
   methods: {},
 };
 </script>
@@ -46,7 +54,6 @@ export default {
   height: 50px;
   margin-top: 10px;
 }
-
 svg {
   height: 40px;
 }
