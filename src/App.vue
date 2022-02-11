@@ -1,7 +1,7 @@
 <template>
   <div id="generics">
     <header>
-      <Navbar />
+      <Navbar :albums="discs" />
     </header>
     <main>
       <Albums :albums="discs" />

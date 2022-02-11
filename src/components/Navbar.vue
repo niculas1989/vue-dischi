@@ -16,7 +16,9 @@
       </a>
       <select name="genre" id="genre" form="genreform">
         <option value="default">---</option>
-        <option></option>
+        <option v-for="album in albums" :key="album.genre">
+          {{ album.genre }}
+        </option>
       </select>
     </div>
   </nav>
@@ -25,6 +27,7 @@
 <script>
 export default {
   name: "Navbar",
+  props: ["albums"],
   data() {
     return {
       search: "",
