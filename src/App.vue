@@ -4,7 +4,7 @@
       <Navbar />
     </header>
     <main>
-      <Albums />
+      <Albums :albums="discs" />
     </main>
   </div>
 </template>
@@ -12,12 +12,28 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import Albums from "./components/Albums.vue";
-
+import axios from "axios";
 export default {
   name: "App",
   components: {
     Navbar,
     Albums,
+  },
+  data() {
+    return {
+      discs: [],
+      url: "https://flynn.boolean.careers/exercises/api/array/music",
+    };
+  },
+  methods: {
+    getAlbums() {
+      axios.get(this.url).then((res) => {
+        this.discs = res.data.response;
+      });
+    },
+  },
+  mounted() {
+    this.getAlbums();
   },
 };
 </script>

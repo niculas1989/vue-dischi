@@ -16,20 +16,13 @@
       </a>
       <select name="genre" id="genre" form="genreform">
         <option value="default">---</option>
-        <option
-          v-for="album in listOfAlbums"
-          :key="album.title"
-          :value="album.genre"
-        >
-          {{ album.genre }}
-        </option>
+        <option></option>
       </select>
     </div>
   </nav>
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "Navbar",
   data() {
@@ -40,16 +33,7 @@ export default {
     };
   },
   computed: {},
-  methods: {
-    getAlbums() {
-      axios.get(this.url).then((res) => {
-        this.listOfAlbums = res.data.response;
-      });
-    },
-  },
-  mounted() {
-    this.getAlbums();
-  },
+  methods: {},
 };
 </script>
 
