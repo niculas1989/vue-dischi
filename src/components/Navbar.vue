@@ -15,7 +15,7 @@
         </svg>
       </a>
       <select name="genre" id="genre" form="genreform">
-        <option value="default">---</option>
+        <option value="default">SELEZIONA IL GENERE</option>
         <option v-for="(album, index) in filteredGenre" :key="index">
           {{ album }}
         </option>
