@@ -14,13 +14,15 @@
           />
         </svg>
       </a>
-      <select name="genre" id="genre" form="genreform" v-model="search">
+      <select
+        name="genre"
+        id="genre"
+        form="genreform"
+        v-model="search"
+        @change="$emit('uploaded', search)"
+      >
         <option value="default">SELEZIONA IL GENERE</option>
-        <option
-          v-for="(album, index) in filteredGenre"
-          :key="index"
-          @change="$emit(uploaded)"
-        >
+        <option v-for="(album, index) in filteredGenre" :key="index">
           {{ album }}
         </option>
       </select>
@@ -34,7 +36,7 @@ export default {
   props: ["albums"],
   data() {
     return {
-      search: "",
+      search: "SELEZIONA IL GENERE",
       listOfAlbums: [],
       url: "https://flynn.boolean.careers/exercises/api/array/music",
     };
