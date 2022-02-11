@@ -14,9 +14,13 @@
           />
         </svg>
       </a>
-      <select name="genre" id="genre" form="genreform">
+      <select name="genre" id="genre" form="genreform" v-model="search">
         <option value="default">SELEZIONA IL GENERE</option>
-        <option v-for="(album, index) in filteredGenre" :key="index">
+        <option
+          v-for="(album, index) in filteredGenre"
+          :key="index"
+          @change="$emit(uploaded)"
+        >
           {{ album }}
         </option>
       </select>

@@ -1,7 +1,7 @@
 <template>
   <div id="generics">
     <header>
-      <Navbar :albums="discs" />
+      <Navbar :albums="discs" @uploaded="changedGenre" />
     </header>
     <main>
       <Albums :albums="discs" />
