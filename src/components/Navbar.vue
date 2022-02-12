@@ -21,7 +21,7 @@
         v-model="search"
         @change="$emit('filter-genre', search)"
       >
-        <option value="default">ALL</option>
+        <option value="ALL">ALL</option>
         <option v-for="(album, index) in filteredGenre" :key="index">
           {{ album }}
         </option>
