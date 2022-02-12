@@ -1,10 +1,10 @@
 <template>
   <div id="generics">
     <header>
-      <Navbar :albums="discs" @uploaded="filteredCards" />
+      <Navbar :albums="discs" @filter-genre="test" />
     </header>
     <main>
-      <Albums :albums="discs" />
+      <Albums :albums="discs" :filter-genre="filterChange" />
     </main>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
     return {
       discs: [],
       url: "https://flynn.boolean.careers/exercises/api/array/music",
-      filterGenre: "",
+      filterChange: "",
     };
   },
   computed: {},
@@ -32,6 +32,9 @@ export default {
       axios.get(this.url).then((res) => {
         this.discs = res.data.response;
       });
+    },
+    test(key) {
+      this.filterChange = key;
     },
   },
   mounted() {

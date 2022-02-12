@@ -19,9 +19,9 @@
         id="genre"
         form="genreform"
         v-model="search"
-        @change="$emit('uploaded', search)"
+        @change="$emit('filter-genre', search)"
       >
-        <option value="default">SELEZIONA IL GENERE</option>
+        <option value="default">ALL</option>
         <option v-for="(album, index) in filteredGenre" :key="index">
           {{ album }}
         </option>
@@ -36,16 +36,14 @@ export default {
   props: ["albums"],
   data() {
     return {
-      search: "SELEZIONA IL GENERE",
-      listOfAlbums: [],
-      url: "https://flynn.boolean.careers/exercises/api/array/music",
+      search: "ALL",
     };
   },
   computed: {
     filteredGenre() {
       const genres = [];
-      this.albums.forEach((d) => {
-        if (!genres.includes(d.genre)) genres.push(d.genre);
+      this.albums.forEach((disc) => {
+        if (!genres.includes(disc.genre)) genres.push(disc.genre);
       });
       return genres;
     },
